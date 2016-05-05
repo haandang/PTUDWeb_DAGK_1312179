@@ -8,207 +8,214 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 	</head>
-  
-	<body id="body_main">
+	
+	<body class="body_main-main" ng-app="MyApp">
+        <div ng-controller="ExampleController">
+             <!-- header-panner -->
+             <nav id="header-banner" class="navbar-default">
+                <div class="wrapper row">
+                    <div class="col-md-1"></div>
 
-		<div class="container">
-			<div class="row>
-				<!--HEAD-->
-				<div class="header_top">
-					<!--Avatar-->
-					<div class="col-md-4">
-						<img class="avatar" src="./img/profile.png" alt="avatar"/>
-					</div>
-					
-					<div class="col-md-8">
-						<h1> ĐẶNG Văn Quốc Hân </h1>
-						<h2> Student at HCMUS <h2>
-						<h3> Curent: HCM.city, Vietnam <h3>
-						<span> <p>Phone: (+84)1649375184 </p> </span>
-						<span> <p>Email: <a href="sendto:dvqhan@gmail.com">dvqhan@gmail.com</a> </p> </span>
-					</div>
-				</div>
-			
-			
-			
-			
-				<!--MAIN BACKGROUND-->
-				<div class="main_body">
-					
-					<!--Background-->
-					
-					<!-- Summary -->
-					<div class="row" ng-show="cv.informations.summary">
-						<div class="col-xs-11 col-sm-11 col-md-11 col-lg-11">
-							<h3>Summary</h3>
-						</div>
-						<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                    <a class="banner-logo-container guest col-md-6" href="{{header.contents[0].href}}">
+                        <h2 id="li-logo" class="logo">data.header_banner.contents[0].content</h2>
+                    </a>
+                   
+                    <nav role="navigation" class="nav guest-nav col-md-4" aria-label="Main site navigation" style="float: left; text-align: center;">
+                        <ul role="menubar">
+                            <li role="menuitem" class="nav-item">
+                                <a class="nav-link" href="{{header.contents[1].href}}">
+                                {{data.header_banner.contents[1].content}}
+                                </a>
+                            </li>
+                            <li role="menuitem" class="nav-item">
+                                <a rel="nofollow" class="nav-link" href="{{header.contents[2].href}}">
+                                {{data.header_banner.contents[2].content}}
+                                </a>
+                            </li>
+                            <li role="menuitem" class="nav-item">
+                                  <a rel="nofollow" class="nav-link" href="{{header.contents[3].href}}">
+                                {{data.header_banner.contents[3].content}}</a>
+                             </li>
+                         </ul>
+                    </nav>
+                    <div class="col-md-1"></div>
+                </div>
+            </nav>
 
-						</div>
-						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" ng-show="!summaryCtrl.toggle">
-							<p class="text-justify ng-binding"> Born in Hue on January 1st, 1995.</p>
-						</div>
-					</div>
-					
-					<!--Experience-->
-					<div class="row" ng-show="cv.informations.experiences">
-						<div class="col-xs-11 col-sm-11 col-md-11 col-lg-11">
-							<h3> Experience</h3>
-						</div>
-						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" ng-show="!summaryCtrl.toggle>
-							<p class="text-justify ng-binding"> None.</p>
-						</div>
-					</div>
+        <!-- body-code -->
 
-						
-					<!-- Skills -->
-					<div class="row" ng-show="cv.informations.skills">
-						<div class="col-xs-11 col-sm-11 col-md-11 col-lg-11">
-							<h3>Skills</h3>
-						</div>
-						<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
-							<h3 class="text-right">
-								<a class="" href="" ng-click="skillsCtrl.show()"><i class="fa fa-angle-down" ng-hide="skillsCtrl.toggle"></i></a>
-								<a class="" href="" ng-click="skillsCtrl.hide()"><i class="fa fa-angle-up ng-hide" ng-show="skillsCtrl.toggle"></i></a>
-							</h3>
-						</div>
-						
-						<div class="row ng-scope" ng-repeat="skill in cv.informations.skills" ng-show="!skillsCtrl.toggle">
-							<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 ng-binding">
-								<i class="fa fa-angle-right"></i> C/C++
-							</div>
-							<div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
-								<div class="progress">
-									<div class="progress-bar ng-binding" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;">
-										90%
+        <div id="layout-main">
+             <!-- background -->
+            <div class="edit_background">img</div>
+
+            <div class="row" id="content-cv">
+                <div id="" class="col-md-8 col-md-offset-1">
+
+                    <section id="topcard" class="profile-section">
+                        <div class="profile-card vcard row">
+                            <div class="profile-picture col-md-4">
+                                <div ng-dblclick=hidetextbox(edit.stateavatar)>
+                                    <img ng-src="{{data.avatar.src}}" >
+                                    <input style="width: 200px" type="text" ng-model="data.avatar.src" ng-show="edit.stateavatar.status"></input>
+                                </div>
+                            </div>
+
+                            <div class="profile-overview col-md-8">
+                                <div class="profile-overview-content">
+                                    <!-- fullname -->
+                                    <div ng-dblclick=hidetextbox(edit.statusfullname)>
+                                        <h1 id="name" ng-show="(!edit.statusfullname.status)" class="fn" ng-bind="data.introduce.fullname"></h1>
+                                        <input ng-show="edit.statusfullname.status" ng-model="data.introduce.fullname">
+                                        <input ng-show="edit.statusfullname.status" ng-model="data.introduce.name">
+                                        </input>
+                                    </div>
+                                    <!-- job -->
+                                     <div ng-dblclick=hidetextbox(edit.statusjob)>
+                                         <p class="headline title" data-section="headline" ng-show="!edit.statusjob.status" ng-bind="data.introduce.job"></p>
+                                         <input ng-show="edit.statusjob.status" ng-model="data.introduce.job"  )></input>
+                                    </div>
+
+
+                                    <dl id="demographics">
+                                        <dt>Location</dt>
+                                        <dd class="descriptor adr"><span class="locality">VietNam</span></dd>
+                                        <dt>Industry</dt>
+                                        <dd class="descriptor">Internet</dd>
+                                    </dl>
+
+                                    <div class="extra-info">
+                                      <table class="table table-striped">
+                                            <tbody>
+                                              <tr ng-repeat = "content in data.history_me.contents" ng-dblclick=hidetextbox(edit.statushistory)>
+                                                <td ng-show="!edit.statushistory.status" ng-bind="content.name"/>
+                                            
+                                                <td>
+                                                    <input type="text" ng-show="edit.statushistory.status" ng-model="content.name"></input>
+                                                </td>
+                                                <td ng-show="!edit.statushistory.status" ng-bind="content.content"/>
+                                                <td>
+                                                    <input type="text" ng-show="edit.statushistory.status" ng-model="content.content"></input>
+                                                </td>
+                                              </tr>
+                                            </tbody>
+                                          </table>
+                                    </div>
+                                    <a href="https://www.linkedin.com/today/influencers?trk=inf_bdg_profile" title="Jeff is an Influencer" class="influencer-badge">Influencer</a>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="reg-upsell">
+                            <h2>Join LinkedIn and access {{data.introduce.name}}’s full profile. It’s free!</h2>
+                            <h3>As a LinkedIn member, you’ll join 400 million other professionals who are sharing connections, ideas, and opportunities.</h3>
+
+                            <ul ng-repeat="content in data.information_me.contents" ng-dblclick=hidetextbox(edit.statusinformationme)>
+                                <li ng-show="!edit.statusinformationme.status" ng-bind="info"></li>
+                                <li>
+                                    <input type="text" ng-show="edit.statusinformationme.status" ng-model="info" ng-init="info=content.name+': ' +content.content"></input>
+                                </li>
+                            </ul>
+
+                            <a href="https://www.linkedin.com/start/view-full-profile?_ed=0_JT_zvVt_9wtU-Z0u-_q-diFtwEFnD5akC1AbCHCiG2cXomKjulJpatVlZjUF6PpU&trk=pprof-0-ts-view_full-0" class="signup-button">View {{data.introduce.name}}'s Full Profile</a>
+                        </div>
+                    </section>
+                    
+                    <!--SUMMARY-->
+                    <section id="summary" class="profile-section">
+                        <h3 class="title">{{data.summary.name}}</h3>
+                        
+                        <div class="description" ng-dblclick=hidetextbox(edit.statesummary)>
+                                <p ng-bind="summarycontent" ng-show="!edit.statesummary.status"></p>
+                                 <textarea  ng-model="summarycontent" ng-show="edit.statesummary.status"> 
+                                 </textarea>
+                        </div> 
+                        
+                    </section>
+                   
+                    <!-- SKILL -->
+                     <section id ="skill" class="profile-section">
+                        <h3 class="title">{{data.skill.name}}</h3>
+                        <div class="skill">
+								<div class="row" ng-repeat="skill in data.skill.contents" ng-dblclick=hidetextbox(edit.stateskill)>
+									<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+										<h3 class="text-right">
+											<a class="" href ng-click="skillsCtrl.show()"><i class="fa fa-angle-down" ng-hide="skillsCtrl.toggle"></i></a>
+											<a class="" href ng-click="skillsCtrl.hide()"><i class="fa fa-angle-up" ng-show="skillsCtrl.toggle"></i></a>
+										</h3>
+									</div>
+									<div class="row" ng-repeat="skill in data.skill" ng-show="!skillsCtrl.toggle">
+										<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+											<i class="fa fa-angle-right"></i> {{data.skill.content.name}}
+										</div>
+										<div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+											<div class="progress">
+												<div class="progress-bar" role="progressbar" aria-valuenow="{{skill.level * 10}}" aria-valuemin="0" aria-valuemax="100" style="width: {{data.skill.content.level * 10}}%;">
+													{{data.skill.content.level * 10}}%
+												</div>
+											</div>
+										</div>
 									</div>
 								</div>
-							</div>
 						</div>
-						
-						<div class="row ng-scope" ng-repeat="skill in cv.informations.skills" ng-show="!skillsCtrl.toggle">
-							<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 ng-binding">
-								<i class="fa fa-angle-right"></i> C#
-							</div>
-							<div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
-								<div class="progress">
-									<div class="progress-bar ng-binding" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-										60%
-									</div>
-								</div>
-							</div>
-						</div>
-						
-						<div class="row ng-scope" ng-repeat="skill in cv.informations.skills" ng-show="!skillsCtrl.toggle">
-							<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 ng-binding">
-								<i class="fa fa-angle-right"></i> Java
-							</div>
-							<div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
-								<div class="progress">
-									<div class="progress-bar ng-binding" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">
-										50%
-									</div>
-								</div>
-							</div>
-						</div>
-						
-						<div class="row ng-scope" ng-repeat="skill in cv.informations.skills" ng-show="!skillsCtrl.toggle">
-							<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 ng-binding">
-								<i class="fa fa-angle-right"></i> HTML, CSS
-							</div>
-							<div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
-								<div class="progress">
-									<div class="progress-bar ng-binding" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;">
-										75%
-									</div>
-								</div>
-							</div>
-						</div>
-						
-						
-						<div class="row ng-scope" ng-repeat="skill in cv.informations.skills" ng-show="!skillsCtrl.toggle">
-							<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 ng-binding">
-								<i class="fa fa-angle-right"></i> AngularJS
-							</div>
-							<div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
-								<div class="progress">
-									<div class="progress-bar ng-binding" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">
-										50%
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					
-					<!-- Projects -->
-					<div class="row" ng-show="cv.informations.projects">
-						<div class="col-xs-11 col-sm-11 col-md-11 col-lg-11">
-							<h3> Projects</h3>
-						</div>
-						<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
-						</div>
-						<div class="row" ng-show="!projectsCtrl.toggle">
-							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-								<div class="bs-callout bs-callout-info ng-scope" ng-repeat="project in cv.informations.projects | orderBy:&#39;-to_date&#39;">
-									<span>
-										<strong> My Calendar Application
-										</strong>
-									</span>
-									<span class="text-grey-color ng-binding"> Mar, 2015 to May, 2015 </span>
-									<p class="ng-binding"> Introduction Software Engineering </p>
-									<p class="ng-binding"> An appliaction can notify user about events established in timetable of this appliaction. </p>
-								</div>
-								
-								
-								<div class="bs-callout bs-callout-info ng-scope" ng-repeat="project in cv.informations.projects | orderBy:&#39;-to_date&#39;">
-									<span>
-										<strong>  TrollChat Application
-										</strong>
-									</span>
-									<span class="text-grey-color ng-binding"> Sept, 2015 to Dec, 2015 </span>
-									<p class="ng-binding"> Software Analysis and Design </p>
-									<p class="ng-binding">A chat application which users can chat like yahoo.</p>
-								</div><!-- end ngRepeat: project in cv.informations.projects | orderBy:'-to_date' -->
-							</div>
-						</div>
-					</div>
-						
-						
-						
-					<!-- Education -->
-					<div class="row">
-						<div class="col-xs-11 col-sm-11 col-md-11 col-lg-11">
-							<h3>Education</h3>
-						</div>
-						<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
-							<h3 class="text-right">
-								<a class="" href="" ng-click="educationCtrl.show()"><i class="fa fa-angle-down" ng-hide="educationCtrl.toggle"></i></a>
-								<a class="" href="" ng-click="educationCtrl.hide()"><i class="fa fa-angle-up ng-hide" ng-show="educationCtrl.toggle"></i></a>
-							</h3>
-						</div>
-						
-						<div class="row ng-scope" ng-repeat="edu in cv.informations.education | orderBy:&#39;-to_date&#39;" ng-show="!educationCtrl.toggle">
-							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-								<div class="panel panel-success">
-									<div class="panel-heading">
-										<h3 class="panel-title ng-binding">Ho Chi Minh University of Science</h3>
-									</div>
-									<div class="panel-body">
-										<strong class="ng-binding">Major: Software Engineering</strong>
-										<br>
-										<span class="text-grey-color ng-binding">Period: 2013 to present.</span>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+
+                    </section>
 					
 					
 					
-				</div>
+						
+						
+					
+					
+					
+					
+					
+					
+					
+                    <!-- Experience -->
+                    <section id ="experience" class="profile-section">
+                    <h3 class="title">{{data.experience.name}}</h3>
+                    <ul ng-repeat="content in data.experience.contents">
+                            <li class="position">
+                                <header class="logo">
+                                    <a href={{content.href}}><img class="lazy-loaded" alt="LinkedIn" src={{content.logo_img}}></a>
+                                </header>
+                                <h4 class="item-title"><a href={{content.href_title}}>{{content.title_name}}</a></h4>
+                                <h5 class="item-subtitle"><a href={{content.href}}>{{content.subtitle_name}}</a></h5>
+                                <span class="date-range">{{content.date_range}}</span>
+                            </li>
+                        </ul>
+                    </section>
+                     <!-- EDUCATION -->
+                    <section id="education" class="profile-section">
+                        <h3 class="title">{{data.education.name}}</h3>
+                         <div class="description" ng-dblclick=hidetextbox(edit.stateeducation)>
+                                <p ng-bind="educationcontent" ng-show="!edit.stateeducation.status"></p>
+                                 <textarea  ng-model="educationcontent" ng-show="edit.stateeducation.status"> 
+                                 </textarea>
+                        </div> 
+                    </section>
+
+                        <!-- PROJECT -->
+                    <section id="project" class="profile-section">
+                        <h3 class="title">{{data.project.name}}</h3>
+                         <div class="description" ng-dblclick=hidetextbox(edit.stateproject)>
+                                <p ng-bind="projectcontent" ng-show="!edit.stateproject.status"></p>
+                                 <textarea  ng-model="projectcontent" ng-show="edit.stateproject.status"> 
+                                 </textarea>
+                        </div> 
+                    </section>
+                </div>
+
+
+               
+                
+              
+            </div>
 			
-				<!--FOOTER-->
-				<div class="footer">
+			
+			<!--FOOTER-->
+
+				<div id="foother" >
 					<div>
 						<a href="http://www.facebook.com/kolee.chichi" target="_blank"> <img src="Img/fb.png" > </a>
 						<a href="https://www.linkedin.com/profile/preview?locale=en_US&trk=prof-0-sb-preview-primary-button" target="_blank"><img src="Img/linkedIn.png"> </a>
@@ -218,12 +225,21 @@
 						
 					</div>	
 				</div>
-			</div>
-		</div>
-
+			
+			
+			
+             
+            
+        </div>
+           
+            
+        </div>
+           
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
 		<script src="js/bootstrap.min.js"></script>	
+		
+		<script src="js/index.js"></script>
 	</body>
 </html>

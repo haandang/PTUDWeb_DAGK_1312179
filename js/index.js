@@ -1,166 +1,48 @@
-﻿angular
-      .module('MyApp', ['ngMaterial', 'tabs'])
-      .config(function( $mdIconProvider ){
-      });
-      
-      
-      angular.module('tabs', [ 'ngMaterial' ])
-     .controller('AppController', ['fieldService', '$mdBottomSheet', '$mdSidenav', AppController ])
-     .service('fieldService', ['$q', FieldService]);
+﻿
+angular.module('MyApp', ['ngSanitize'])
+        .controller('ExampleController', ['$scope','$http', function($scope, $http)
+        {
+            $http.get('js/json/info.json').success(function(data) {
+              $scope.data = data;
 
-function AppController( fieldService, $mdBottomSheet, $mdSidenav) {
-  
-  var prop = this;
+              function res(data){
+                 var s="";
+                 console.log(data);
+                  data.forEach(function(entry){s+=entry.content+"\n";});
+                 console.log(s);
+                  return s;
+              };
 
-  prop.selected     = null;
-  prop.tabs        = [ ];
-  prop.selectfield   = selectfield;
-  prop.info = {
-    name: 'Tr?n Van �?c',
-    avatar: "http://www.upsieutoc.com/images/2016/03/08/duc.jpg",
-    phone: '01668150363',
-    address: '147, Nguyen Thi Nho St, Ward 16, District 11, Ho Chi Minh, Viet Nam ',
-    email: 'tranvanducqng@gmail.com',
-    facebook: 'www.facebook.com/duc.otaku'
-  };
-  prop.makeContact = makeContact;
-  prop.toggleList   = toggleUsersList;
+              $scope.summarycontent=res($scope.data.summary.contents);
+              $scope.educationcontent=res($scope.data.education.contents);
+              $scope.educationcontent=res($scope.data.education.contents);
+              $scope.projectcontent=res($scope.data.project.contents);
 
-  // Load all registered fields
+            }); 
 
-  fieldService
-      .loadAllfields()
-      .then( function( tabs ) {
-        prop.tabs    = [].concat(tabs);
-        prop.selected = tabs[0];
-      });
-
-  function toggleUsersList() {
-      $mdSidenav('left').toggle();
-    }
-  
-  /**
-    * Select the current avatars
-    * @param menuId
-    */
-  function selectfield(field) {
-     prop.selected =  field;
-   }
-  
-  function makeContact(info){
-    $mdBottomSheet.show(
-    {
-      controllerAs     : "vm",
-      controller       : [ '$mdBottomSheet', ContactSheetController],
-      template: '<md-bottom-sheet class="md-list md-has-header"><md-subheader>Contact <span class="name">{{ vm.user.name }}</span>:</md-subheader><md-list><md-list-item ng-repeat="item in vm.items"><md-button ng-click="vm.contactUser(item)"><md-icon id="padding" md-svg-icon="{{ item.icon_url }}"></md-icon>{{item.name}}</md-button></md-list-item></md-list></md-bottom-sheet>',
-      parent           : angular.element(document.getElementById('showBottomSheet'))
-    });
-    
-    function ContactSheetController( $mdBottomSheet ) {
-       this.user = info;
-       this.items = [
-         { name: 'Google',
-           icon_url: 'https://rawgit.com/angular/material-start/es5-tutorial/app/assets/svg/google_plus.svg'},
-         {
-           name: 'Facebook',
-           icon_url: 'https://upload.wikimedia.org/wikipedia/commons/c/c2/F_icon.svg'
-         }
-       ];
-       this.contactUser = function(action) {
-         $mdBottomSheet.hide();
-        if (action.name == "Facebook"){
-          window.location="https://www.facebook.com/duc.otaku"
-        }else if(action.name == "Google"){
-          window.location="mailto:tranvanducqng@gmail.com";
-        }
           
-       };
-     }
-  }
-}
 
 
-// fields DataService
+           $scope.edit = {statusfullname:{name:"hello", status:false},
+                    statusjob:{name:"hello",  status:false},
+                    statushistory:{name:"hello",  status:false},
+                    statusinformationme:{name:"hello",  status:false},
+                    statesummary:{name:"hello",  status:false},
+                    stateeducation:{name:"hello",  status:false},
+                    stateproject:{name:"hello",  status:false},
+                    stateavatar:{name:"hello",  status:false},
+                    stateskill:{name:"hello",  status:false}
+                  };
 
-function FieldService($q){
-  var cv = [
-		{
-	"document": "Han DANG | CURRICULUM VITAE",
-	"firstname": "DANG", 
-	"middlename": "Van",
-	"lastname": "Quoc Han",
-	"phones": {
-		"mobile": "+84 1649375184"
-	},
-	"email": [
-		"dvqhan@gmail.com",
-	],	
- 
- 
-	"education": [
-		{
-			"title": "Majoring in Software Engineering",
-			"place": "Ho Chi Minh University of Science",
-			"period": "Sept, 2013 to now"
-		},
-	],
-  
-	"skills": [
-		{
-			"skill": [
-				"C",
-				"C++",
-				"C#",
-				"Java",
-				"HTML",
-				"CSS",
-				"JavaScript"
-			],
-			"others": [
-				"SQL",
-				"Linux"
-			]
-		},
-	],
-	
-	"projects": [
-		{
-			"title": "My Calendar Application",
-			"subject": "Introduction Software Engineering",
-			"describe": "An appliaction can notify user about events established in timetable of this appliaction.",
-			"period": "Mar, 2015 to May, 2015"
-		},
-		{
-			"title": "TrollChat Application",
-			"subject": "Software Analysis and Design",
-			"describe": "A chat application which users can chat like yahoo.",
-			"period": "Sept, 2015 to Dec, 2015"
-		},
-		
-	],
-	
-	"sumary": [
-		{
-			"Born in Hue on January 1st, 1995."
-		},
-	],
-	
-	"experience": [
-		{
-			"Soft skill"
-		},
-	],
-  
-  
-  
-}
-	];
+            $scope.hidetextbox = function(nameshow){
+              nameshow.status = !nameshow.status;
+              console.log(nameshow);   
+            };
 
-  // Promise-based API
-  return {
-    loadAllfields : function() {
-      // Simulate async nature of real remote calls
-      return $q.when(tabs);
-    }
-  };
-}
+         
+        }]);
+
+
+
+
+

@@ -1,44 +1,338 @@
+.background-main{
+	background-color: #dfdfdf;
+}
+.edit_background{
+    width: 100%;
+    height: 351px;
+    background-image: url('https://media.licdn.com/media/p/7/005/066/160/199ad4f.jpg');
+    position: fixed;
+}
+/*<header-banner>*/
+	#header-banner{
+	    position: fixed;
+	    top: 0;
+	    left: 0;
+	    right: 0;
+	    z-index: 2;
+	    background-color: #3f3f3f;
+	    background-image: -webkit-linear-gradient(top, #696969,#3f3f3f);
+	    background-image: -moz-linear-gradient(top, #696969,#3f3f3f);
+	    background-image: -o-linear-gradient(top, #696969,#3f3f3f);
+	    background-image: linear-gradient(top, #696969,#3f3f3f);
+	    -webkit-box-shadow: 0 0 10px #333;
+	    -moz-box-shadow: 0 0 10px #333;
+	    box-shadow: 0 0 10px #333;
+	    height: 42px;
+	}
 
-/*background*/
-#body_main{
-	background-color: rgb(223,223,223);
-	padding-top:50px;
-	font-family:Arial;
+	/*Logo of header*/
+	#header-banner .banner-logo-container.guest .logo {
+	    margin-top: 10.5px;
+	    text-indent: -119988px;
+	    overflow: hidden;
+	    text-align: left;
+	    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAF0AAAAVCAMAAAATpBLwAAAAaVBMVEX///////////////////////////////8Ad7X///////////////////8Ad7X///////////////////////////////8Ad7XA3e3Q5vGgzOMwkcOAu9pws9ZgqtGQxN8QgLrw9/sgiL405m/gAAAAFnRSTlMAEFnw0GAwQPAgoC1wsDCAwJBQQ+AWWM38wAAAAVBJREFUeF7F1YlugzAMBmA7Fw2FQrvN6Xls7/+Qs9MFptLVqlppP1L0S4hPHAbgySxm6TqzBbwqjE/5l+npVkaAiH4aOnIoZbqvZLozpfOGNmddb7g2j+sHLgdd91z94/qRy1HXYdkv4XE9ndanpOuSOzpWVRzrqEtUvVSiFltuy6IHS+QAa+K4ILZU6wediyzr3Zrb9qzo9E6S7qJHwREt5dggo5VzrdMnSbaa/gPlLpaNUMslYc+rVOurxl7rJZreATSlCx4A2EIAFNFeJquZ6PuU9rpOESCWzvHCDsFywET/Smk36HNjzPymXno5d/yl27/1VHoSnA3mFV0mps93JrIVQlYbrv6ubsC8GV6p5LaelU4epYuwsg6hFb7yVtPNh66DwLQaxrCT+c/RdNl0/TKTWGevRoDQl7dJv+96xtc/jFX7vueZ+cd/0/P/1W+1/0p3tJnXDAAAAABJRU5ErkJggg==') no-repeat 0 0;
+	    height: 21px;
+	    width: 93px;
+	}
+
+	.global-header.wrapper {
+	    margin-left: auto;
+	    margin-right: auto;
+	    width: 974px;
+	    position: relative;
+	}
+	#header-banner li{
+	  display: inline-block;
+	  width: 120px;
+	  height: 40px;
+	  line-height: 40px;
+	  margin-left: -5px;
+	}
+	#header-banner a{
+		color:#ffffff;
+	}
+	#header-banner a:hover{
+		color:blue;
+		line-height: 46px;
+		height: 40px;
+	}
+	#header-banner a:focus{
+		color:red;
+	}
+/*</header-banner>*/
+
+
+
+#content-cv{
+	margin-top: 20px;
+    
+}
+#profile{
+	padding-top: 40px;
+
+}
+.profile-section{
+	margin-top: 2px;
+    background-color:rgba(255, 255, 255, 0.8);
+	/*background-color: #ffffff;*/
+
+	box-shadow: 6px 7px 8px #565957;
+}
+.profile-picture {
+	padding:20px 20px 20px 20px;
+}
+.profile-picture img{
+	vertical-align: middle;
+	height: 200px;
+	width: 200px;
+}
+#topcard{
+    margin-top: 60px;
+    padding:30px 30px 30px 30px;
+}
+#topcard #name {
+    font-size: 26px;
+    font-weight: bold;
+    line-height: 30px;
+    color: #000;
+}
+#topcard .headline {
+    padding: 1px 0;
+    font-size: 16px;
+    line-height: 20px;
+    color: #333;
+    font-weight: normal;
+}
+
+/*<demographic>*/
+	#demographics{
+	font-size: 10px;
+	 color: #66696a;
+	 display: inline-block;
+	 float: left;
+	}
+
+	#topcard #demographics .descriptor {
+	    display: inline-block;
+	    font-size: 13px;
+	    line-height: 17px;
+	    color: #66696a;
+	}
+	#topcard #demographics dt {
+	    display: none;
+	}
+	#topcard #demographics .descriptor ~ .descriptor {
+	    border-left: 1px solid #bbb;
+	    padding-left: 8px;
+	    margin-left: 5px;
+	}
+/*</demographic>*/
+
+/*profile-card*/
+.extra-info{
+	font-size: 10px;
+	margin-right: 30px;
+}
+
+#topcard .influencer-badge {
+    display: -moz-inline-stack;
+    display: inline-block;
+    vertical-align: middle;
+    zoom: 1;
+    vertical-align: baseline;
+    font-size: 14px;
+    line-height: 14px;
+    color: #333;
+    background-image: url('https://static.licdn.com/sc/h/8vcxa9840vpd17tibshqi9ksm');
+    text-indent: -119988px;
+    overflow: hidden;
+    text-align: left;
+    background-position: 0 0;
+    width: 90px;
+    height: 22px;
+}
+#topcard .member-connections, #topcard .influencer-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    float: right;
+}
+/*</profile-card>*/
+/*reg-upsell*/
+.reg-upsell {
+    border-top: 1px solid #ddd;
+    padding: 25px 40px 30px;
+}
+
+.reg-upsell h2 {
+    font-size: 26px;
+    font-weight: normal;
+    line-height: 30px;
+    color: #434649;
+    padding-bottom: 12px;
+}
+.reg-upsell h3 {
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 18px;
+    color: #434649;
+    padding: 0 0 12px;
+}
+.reg-upsell .signup-button {
+    font-weight: bold;
+    border-width: 1px;
+    border-style: solid;
+    cursor: pointer;
+    margin: 0;
+    overflow: visible;
+    text-decoration: none !important;
+    text-align: center;
+    width: auto;
+    text-shadow: 0 1px 1px rgba(255,255,255,0.75);
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    padding: 0 13px;
+    height: 31px;
+    line-height: 29px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 13px;
+    color: #333;
+    background-color: #f6e312;
+    border-color: #e9ac1a;
+    filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFF6E312', endColorstr='#FFF9C80D');
+    background-image: -webkit-linear-gradient(top, #f6e312 0%,#f9c80d 100%);
+    background-image: -moz-linear-gradient(top, #f6e312 0%,#f9c80d 100%);
+    background-image: -o-linear-gradient(top, #f6e312 0%,#f9c80d 100%);
+    background-image: linear-gradient(top, #f6e312 0%,#f9c80d 100%);
+    white-space: nowrap;
+    display: -moz-inline-stack;
+    display: inline-block;
+    vertical-align: middle;
+    zoom: 1;
+    vertical-align: middle;
+    display: -moz-inline-stack;
+    display: inline-block;
+    vertical-align: middle;
+    zoom: 1;
+    padding-bottom: 12px;
+}
+
+/*<Summary>*/
+h3{
+	 
+    display: block;
+    font-size: 1.17em;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+}
+.profile-section{
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
+.profile-section .title {
+    font-size: 20px;
+    text-shadow: 5px 5px 8px black;
+    font-weight: normal;
+    line-height: 18px;
+    color: #434649;
+    padding: 30px 35px 0;
+}
+textarea{
+    width: 80%;
+    height: 100px;
+}
+
+.description {
+     white-space: pre-line;
+     padding-left: 10px;
+     padding-right: 10px;
+     margin-left: 30px;
+     margin-right: 30px;
+     border-left: 30px solid rgba(255, 0, 0, .2);
+     border-right: 30px solid rgba(255, 0, 0, .2);
+
+}
+
+.profile-section .description {
+    font-size: 13px;
+    line-height: 27px;
+    color: #333;
+    font-weight: normal;
+    margin-top: 15px;
+}
+/*</Summary>*/
+}
+/*EX*/
+
+
+li{
+    list-style: none;
+    display: inline;
+}
+ul{
+    list-style: none;
+}
+
+.position{
+    padding: 30px 30px 30px 5px;
+}
+.position a{
+    color: #000000;
+}
+.position header{
+    float: right;
+}
+
+
+/*Skill*/
+
+.profile-section .pills {
+    padding: 30px 35px;
+}
+.skill ul{
+    display: inline-block;
+}
+.skill li{
+    text-align: center;
+    display: inline-block;
+    list-style-type: none;
+    background-color: #CFCDD6;
+    line-height: 40px;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin:10px 10px 10px 10px;
+}
+.skill li:hover{
+    background-color: #226B96;
+}
+.skill a{
+    color: #ffffff;
 }
 
 
 
-.container{
-	
+/*fooother*/
+#foother{
+    margin-top: 10px;
+    line-height: 120px;
+    position: absolute;
+    width: 100%;
+    background-color: #4A4846;
+    color:#ffffff;
 }
-
-.header_top{
-	background-color: #aaaaaa;
-
-	border-bottom: 20px solid rgb(223,223,223);
+#foother ul{
+    text-align: center;
 }
-.main_body{
-	background-color: rgb(255,255,255);
-	
-	padding: 50px;
-	width: 960px;
-	overflow:auto;
-	border-bottom: 20px solid rgb(223,223,223);
+#foother li{
+    display: inline-block;
+    margin-right: 100px
 }
-.footer{
-background-color: rgb(255,255,255);
-	
-	padding: 50px;
-	width: 960px;
-	overflow:auto;
-
-}
-.avatar{
-	width:280px;
-	height:280px;
-	border-radius: 10px;
-}
-.item-logo{}
-.item-title{}
-.item-subtitle{}
-.meta{}

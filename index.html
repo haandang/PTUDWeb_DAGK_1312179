@@ -1,15 +1,22 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title> Han DANG | CV </title>
-		<link rel="stylesheet" type="text/css" href="css/Style.css">
-		 <meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link href="css/bootstrap.min.css" rel="stylesheet">
-	</head>
-	
-	<body class="body_main-main" ng-app="MyApp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Han Dang | CV</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/Style.css">
+    <script src="js/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular-sanitize.js"></script>
+
+
+  </head>
+  <body class="background-main" ng-app="MyApp">
         <div ng-controller="ExampleController">
              <!-- header-panner -->
              <nav id="header-banner" class="navbar-default">
@@ -56,7 +63,7 @@
                             <div class="profile-picture col-md-4">
                                 <div ng-dblclick=hidetextbox(edit.stateavatar)>
                                     <img ng-src="{{data.avatar.src}}" >
-                                    <input style="width: 200px" type="text" ng-model="data.avatar.src" ng-show="edit.stateavatar.status"></input>
+                                    <input  class="changed" style="width: 200px" type="text" ng-model="data.avatar.src" ng-show="edit.stateavatar.status"></input>
                                 </div>
                             </div>
 
@@ -65,14 +72,14 @@
                                     <!-- fullname -->
                                     <div ng-dblclick=hidetextbox(edit.statusfullname)>
                                         <h1 id="name" ng-show="(!edit.statusfullname.status)" class="fn" ng-bind="data.introduce.fullname"></h1>
-                                        <input ng-show="edit.statusfullname.status" ng-model="data.introduce.fullname">
-                                        <input ng-show="edit.statusfullname.status" ng-model="data.introduce.name">
+                                        <input  class="changed" ng-show="edit.statusfullname.status" ng-model="data.introduce.fullname">
+                                        <input  class="changed" ng-show="edit.statusfullname.status" ng-model="data.introduce.name">
                                         </input>
                                     </div>
                                     <!-- job -->
                                      <div ng-dblclick=hidetextbox(edit.statusjob)>
                                          <p class="headline title" data-section="headline" ng-show="!edit.statusjob.status" ng-bind="data.introduce.job"></p>
-                                         <input ng-show="edit.statusjob.status" ng-model="data.introduce.job"  )></input>
+                                         <input  class="changed" ng-show="edit.statusjob.status" ng-model="data.introduce.job"  )></input>
                                     </div>
 
 
@@ -90,11 +97,11 @@
                                                 <td ng-show="!edit.statushistory.status" ng-bind="content.name"/>
                                             
                                                 <td>
-                                                    <input type="text" ng-show="edit.statushistory.status" ng-model="content.name"></input>
+                                                    <input  class="changed" type="text" ng-show="edit.statushistory.status" ng-model="content.name"></input>
                                                 </td>
                                                 <td ng-show="!edit.statushistory.status" ng-bind="content.content"/>
                                                 <td>
-                                                    <input type="text" ng-show="edit.statushistory.status" ng-model="content.content"></input>
+                                                    <input  class="changed" type="text" ng-show="edit.statushistory.status" ng-model="content.content"></input>
                                                 </td>
                                               </tr>
                                             </tbody>
@@ -112,16 +119,17 @@
                             <ul ng-repeat="content in data.information_me.contents" ng-dblclick=hidetextbox(edit.statusinformationme)>
                                 <li ng-show="!edit.statusinformationme.status" ng-bind="info"></li>
                                 <li>
-                                    <input type="text" ng-show="edit.statusinformationme.status" ng-model="info" ng-init="info=content.name+': ' +content.content"></input>
+                                    <input  class="changed" type="text" ng-show="edit.statusinformationme.status" ng-model="info" ng-init="info=content.name+': ' +content.content"></input>
                                 </li>
                             </ul>
 
-                            <a href="https://www.linkedin.com/start/view-full-profile?_ed=0_JT_zvVt_9wtU-Z0u-_q-diFtwEFnD5akC1AbCHCiG2cXomKjulJpatVlZjUF6PpU&trk=pprof-0-ts-view_full-0" class="signup-button">View {{data.introduce.name}}'s Full Profile</a>
+                            <a href="https://www.linkedin.com/profile/preview?locale=en_US&trk=prof-0-sb-preview-primary-button" class="signup-button">View {{data.introduce.name}}'s Full Profile</a>
                         </div>
                     </section>
                     
                     <!--SUMMARY-->
                     <section id="summary" class="profile-section">
+					<img class="logo-title" src={{data.summary.logo}}>
                         <h3 class="title">{{data.summary.name}}</h3>
                         
                         <div class="description" ng-dblclick=hidetextbox(edit.statesummary)>
@@ -134,76 +142,75 @@
                    
                     <!-- SKILL -->
                      <section id ="skill" class="profile-section">
+					 <img class="logo-title" src={{data.skill.logo}}>
                         <h3 class="title">{{data.skill.name}}</h3>
-                        <div class="skill">
-								<div class="row" ng-repeat="skill in data.skill.contents" ng-dblclick=hidetextbox(edit.stateskill)>
-									<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
-										<h3 class="text-right">
-											<a class="" href ng-click="skillsCtrl.show()"><i class="fa fa-angle-down" ng-hide="skillsCtrl.toggle"></i></a>
-											<a class="" href ng-click="skillsCtrl.hide()"><i class="fa fa-angle-up" ng-show="skillsCtrl.toggle"></i></a>
-										</h3>
-									</div>
-									<div class="row" ng-repeat="skill in data.skill" ng-show="!skillsCtrl.toggle">
-										<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-											<i class="fa fa-angle-right"></i> {{data.skill.content.name}}
-										</div>
-										<div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
-											<div class="progress">
-												<div class="progress-bar" role="progressbar" aria-valuenow="{{skill.level * 10}}" aria-valuemin="0" aria-valuemax="100" style="width: {{data.skill.content.level * 10}}%;">
-													{{data.skill.content.level * 10}}%
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-						</div>
+                        <ul class="skill">
+                             <li ng-repeat="skill in data.skill.contents" ng-dblclick=hidetextbox(edit.stateskill)>
+                                <a href={{skill.href}} title{{skill.title}}><span class="wrap" ng-bind="skill.name" ng-show="!edit.stateskill.status"></span>
+                                </a>
+                                <input  class="changed" type="text" ng-model="skill.name" ng-show="edit.stateskill.status">
+                            </li>
+                        </ul>
 
                     </section>
-					
-					
-					
-						
-						
-					
-					
-					
-					
-					
 					
 					
                     <!-- Experience -->
-                    <section id ="experience" class="profile-section">
-                    <h3 class="title">{{data.experience.name}}</h3>
-                    <ul ng-repeat="content in data.experience.contents">
-                            <li class="position">
-                                <header class="logo">
-                                    <a href={{content.href}}><img class="lazy-loaded" alt="LinkedIn" src={{content.logo_img}}></a>
-                                </header>
-                                <h4 class="item-title"><a href={{content.href_title}}>{{content.title_name}}</a></h4>
-                                <h5 class="item-subtitle"><a href={{content.href}}>{{content.subtitle_name}}</a></h5>
-                                <span class="date-range">{{content.date_range}}</span>
-                            </li>
-                        </ul>
+					<section id="experience" class="profile-section">
+					<img class="logo-title" src={{data.experience.logo}}>
+                        <h3 class="title">{{data.experience.name}}</h3>
+                         <div class="description" ng-dblclick=hidetextbox(edit.stateproject)>
+                                <p ng-bind="experiencecontent" ng-show="!edit.stateexperience.status"></p>
+                                 <textarea  ng-model="experiencecontent" ng-show="edit.stateexperience.status"> 
+                                 </textarea>
+                        </div> 
                     </section>
+					
+
+                    
                      <!-- EDUCATION -->
                     <section id="education" class="profile-section">
-                        <h3 class="title">{{data.education.name}}</h3>
-                         <div class="description" ng-dblclick=hidetextbox(edit.stateeducation)>
-                                <p ng-bind="educationcontent" ng-show="!edit.stateeducation.status"></p>
-                                 <textarea  ng-model="educationcontent" ng-show="edit.stateeducation.status"> 
-                                 </textarea>
-                        </div> 
+                        <img class="logo-title" src={{data.education.logo}}>
+						<span><h3 class="title">{{data.education.name}}</h3></span>
+						<ul ng-repeat="education in data.education.contents">
+							<li class="position" ng-dblclick=hidetextbox(edit.stateeducation)>
+								<header class="logo">
+									<img class="lazy-loaded" alt={{education.title_name}} src={{education.logo_img}}>
+								</header>
+								<h4 class="item-title">{{education.title_name}}</h4>
+								<input  class="changed" type="text" ng-show="edit.stateeducation.status" ng-model="education.title_name"></input>
+								<h5 class="item-subtitle">{{education.subtitle_name}}</h5>
+								<input  class="changed" type="text" ng-show="edit.stateeducation.status" ng-model="education.subtitle_name"></input>
+								<i>{{education.date_range}}</i>
+								<input  class="changed" type="text" ng-show="edit.stateeducation.status" ng-model="education.date_range"></input>
+								
+							</li>
+						</ul>
                     </section>
 
-                        <!-- PROJECT -->
-                    <section id="project" class="profile-section">
-                        <h3 class="title">{{data.project.name}}</h3>
-                         <div class="description" ng-dblclick=hidetextbox(edit.stateproject)>
-                                <p ng-bind="projectcontent" ng-show="!edit.stateproject.status"></p>
-                                 <textarea  ng-model="projectcontent" ng-show="edit.stateproject.status"> 
-                                 </textarea>
-                        </div> 
+                    <!-- PROJECT -->
+					<section id ="project" class="profile-section">
+					<img class="logo-title" src={{data.project.logo}}>
+						<h3 class="title">{{data.project.name}}</h3>
+						<ul ng-repeat="project in data.project.contents">
+							<li class="position" ng-dblclick=hidetextbox(edit.stateproject)>
+									<header class="logo">
+										<img class="lazy-loaded" alt={{project.title_name}} src={{project.logo_img}}><
+									</header>
+									<h4 class="item-title">{{project.title_name}}</h4>
+									<input  class="changed" type="text" ng-show="edit.stateproject.status" ng-model="project.title_name"></input>
+									<h5 class="item-subtitle">{{project.subtitle_name}}</h5>
+									<input  class="changed" type="text" ng-show="edit.stateproject.status" ng-model="project.subtitle_name"></input>
+									<i>Period: {{project.date_range}}</i>
+									<input  class="changed" type="text" ng-show="edit.stateproject.status" ng-model="project.date_range"></input>
+									<p project.description}}</p>
+									<input  class="changed" type="text" ng-show="edit.stateproject.status" ng-model="project.description"></input>
+							</li>
+						</ul>
                     </section>
+					
+					
+                    
                 </div>
 
 
@@ -211,35 +218,32 @@
                 
               
             </div>
-			
-			
-			<!--FOOTER-->
+             <div id="footer">
+					<a href="http://www.facebook.com/kolee.chichi" target="_blank"> <img src="img/fb.png" > </a>
+					<a href="https://www.linkedin.com/profile/preview?locale=en_US&trk=prof-0-sb-preview-primary-button" target="_blank"><img src="img/linkedIn.png"> </a>
+					<a href="https://www.youtube.com/" target="_blank"><img src="img/youtube.png"> </a>
+					<a href="https://github.com/haandang" target="_blank"><img src="img/github.png"> </a>
+                    <ul>
+                        <li ng-repeat="aboutme in data.information_me.contents">
+                            {{aboutme.name}} : {{aboutme.content}}
+                        </li>
 
-				<div id="foother" >
-					<div>
-						<a href="http://www.facebook.com/kolee.chichi" target="_blank"> <img src="Img/fb.png" > </a>
-						<a href="https://www.linkedin.com/profile/preview?locale=en_US&trk=prof-0-sb-preview-primary-button" target="_blank"><img src="Img/linkedIn.png"> </a>
-						<a href="https://www.youtube.com/" target="_blank"><img src="Img/youtube.png"> </a>
-						<a href="https://github.com/haandang" target="_blank"><img src="Img/github.png"> </a>
-						
-						
-					</div>	
-				</div>
-			
-			
-			
-             
+                        
+                    </ul>
+                </div>
             
         </div>
            
             
         </div>
            
-		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-		<!-- Include all compiled plugins (below), or include individual files as needed -->
-		<script src="js/bootstrap.min.js"></script>	
-		
-		<script src="js/index.js"></script>
-	</body>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/index.js"></script>
+
+  </body>
+
 </html>

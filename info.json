@@ -1,0 +1,140 @@
+{
+    "information_me":{
+                    "contents":[
+                        {
+                            "name": "Email",
+                            "content":"dvqhan@gmail.com"
+                        },
+                        {
+                            "name": "Phone",
+                            "content":"+84 1649375184"
+                        },
+                        {
+                            "name": "Address",
+                            "content":"144/5 highway 13, HBC, Thu Duc district, HCM.city"
+                        }
+                    ]},
+	"introduce":{
+                    "name":"Han Dang",
+                    "fullname":"Van Quoc Han DANG",
+                    "job":"Student"
+                },
+    "education":{
+                    "name":"Education",
+					"logo":"img/education.png",
+                    "contents":[{
+						"logo_img":"img/US.png",
+						"title_name":"University of Science",
+						"title_href":"http://www.hcmus.edu.vn/",
+                        "subtitle_name": "Software Engineering",
+                        "date_range": "Sep, 2013 to present"}
+                    ]
+                },
+    "history_me":{"contents":[               
+                    {
+                        "name":"Current",
+                        "content":"Studying SE at University of Science"
+                     },
+                     {
+                         "name":"Previous",
+                         "content":"Studied at Quoc Hoc Highschool"
+                    }
+                ]},
+    "header_banner":{
+                        "name":"header-banner",
+                        "contents":[
+                                    {"content":"LinkedIn Home",
+                                        "href":"http://www.linkedin.com/"},
+                                   { "content":"What is LinkedIn?",
+                                       "href":"http://www.linkedin.com/static?key=what_is_linkedin&amp;trk=hb_what/"},
+                                    {"content":"Join Today",
+                                        "href":"http://start/join?trk=hb_join"},
+                                    {"content":"Sign In",
+                                        "href":"https://www.linkedin.com/uas/login?goback=&amp;trk=hb_signin/"}
+                                ]
+
+                    },
+    "project":{
+            "name":"Project",
+			"logo":"img/project.png",
+            "contents":[
+                    {
+                        "logo_img":"img/mycalendar.png",
+                        "title_name":"My Calendar Application",
+                        "subtitle_name":"Introduction Software Engineering",
+                        "date_range":"Mar, 2015 to May, 2015",
+						"description":"An appliaction can notify user about events established in timetable of this appliaction."
+                    },
+                    {
+                        "logo_img":"img/trollchat.png",
+                        "title_name":"TrollChat Application",
+                        "subtitle_name":"Software Analysis and Design",
+                        "date_range":"Sept, 2015 to Dec, 2015",
+						"description":"A chat application which users can chat like yahoo."
+                    }
+          
+                ]
+        },
+    "avatar":
+            {
+                "src":"img/profile.png",
+                "href":"https://www.facebook.com/kolee.chichi"
+                },
+    
+    "experience":{
+                    "name":"Experience",
+					"logo":"img/experience.png",
+                    "contents":
+                    [
+                        {"content":"None"}
+                    ]
+                },
+         "skill":{
+                    "name":"Skill",
+					"logo":"img/skill.png",
+                    "contents":[   
+                        {
+                            "name":"C",
+                            "href":"",
+                            "title":"Console"
+                        },
+                         {
+                            "name":"C++",
+                            "href":"",
+                            "title":"Console"
+                        },
+                         {
+                            "name":"C#",
+                            "href":"",
+                            "title":"Desktop App"
+                        },
+                         {
+                            "name":"HTML, CSS",
+                            "href":"",
+                            "title":"Web"
+                        },
+                         {
+                            "name":"AngularJS",
+                            "href":"",
+                            "title":"Web"
+                        },
+                         {
+                            "name":"Java",
+                            "href":"",
+                            "title":"Android"
+                        }
+                    ]
+
+
+         },
+        "summary":{
+                    "name":"Summary",
+					"logo":"img/summary.png",
+                    "contents":[
+						{"content":"I was born in Hue at Jan 1st, 1995."},
+                        {"content":"I am  a third-year student in Software Engineering at University of Science."},
+                        {"content":"Hobby: Reading, playing game, watching film, etc..."},
+                    ]
+                }
+}
+

@@ -2,7 +2,7 @@
 angular.module('MyApp', ['ngSanitize'])
         .controller('ExampleController', ['$scope','$http', function($scope, $http)
         {
-            $http.get('js/json/info.json').success(function(data) {
+            $http.get('info.json').success(function(data) {
               $scope.data = data;
 
               function res(data){

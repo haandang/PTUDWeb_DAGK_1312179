@@ -5,8 +5,8 @@
   },
   "education" : {
     "contents" : [ {
-      "period" : "Sep, 2013 to present",
       "logo_img" : "img/US.png",
+      "period" : "Sep, 2013 to present",
       "subtitle_name" : "Software Engineering",
       "title_href" : "http://www.hcmus.edu.vn/",
       "title_name" : "University of Science"
@@ -17,19 +17,38 @@
   "experience" : {
     "contents" : [ {
       "description" : "Undertake the design and processing stage",
-	  "logo":"img/fireteam.png",
-      "title_name" : "Fire Team",
+      "logo" : "img/fireteam.png",
       "period" : "Mar, 2013",
-      "position" : "Organizer"
+      "position" : "Organizer",
+      "title_name" : "Fire Team"
     }, {
       "description" : "Caption designer and content processing",
-	  "logo":"img/teamtrasua.png",
-      "title_name" : "Milky Tea Team",
+      "logo" : "img/teamtrasua.png",
       "period" : "Since Mar, 2016",
-      "position" : "Caption Specialist"
+      "position" : "Caption Specialist",
+      "title_name" : "Milky Tea Team"
     } ],
     "logo" : "img/experience.png",
     "name" : "Experience"
+  },
+  "footer" : {
+    "contents" : [ {
+      "href" : "http://www.facebook.com/kolee.chichi",
+      "name" : "Facebook",
+      "src" : "img/fb.png"
+    }, {
+      "href" : "https://www.linkedin.com/profile/preview?locale=en_US&trk=prof-0-sb-preview-primary-button",
+      "name" : "LinkedIN",
+      "src" : "img/linkedIn.png"
+    }, {
+      "href" : "https://www.youtube.com/",
+      "name" : "Youtube",
+      "src" : "img/youtube.png"
+    }, {
+      "href" : "https://github.com/haandang",
+      "name" : "GutHub",
+      "src" : "img/github.png"
+    } ]
   },
   "header_banner" : {
     "contents" : [ {
@@ -75,15 +94,15 @@
   },
   "project" : {
     "contents" : [ {
-      "period" : "Mar, 2015 to May, 2015",
       "description" : "An appliaction can notify user about events established in timetable of this appliaction.",
       "logo_img" : "img/mycalendar.png",
+      "period" : "Mar, 2015 to May, 2015",
       "subtitle_name" : "Introduction Software Engineering",
       "title_name" : "My Calendar Application"
     }, {
-      "period" : "Sept, 2015 to Dec, 2015",
       "description" : "A chat application which users can chat like yahoo.",
       "logo_img" : "img/trollchat.png",
+      "period" : "Sept, 2015 to Dec, 2015",
       "subtitle_name" : "Software Analysis and Design",
       "title_name" : "TrollChat Application"
     } ],
@@ -119,26 +138,6 @@
     "logo" : "img/skill.png",
     "name" : "Skill"
   },
-  "footer":{ 
-    "contents": [
-		{
-		  "name":"Facebook",
-		  "href":"http://www.facebook.com/kolee.chichi",
-		  "src":"img/fb.png"
-		}, {
-		  "name":"LinkedIN",
-		  "href":"https://www.linkedin.com/profile/preview?locale=en_US&trk=prof-0-sb-preview-primary-button",
-		  "src":"img/linkedIn.png"
-		}, {
-		  "name":"Youtube",
-		  "href":"https://www.youtube.com/",
-		  "src":"img/youtube.png"
-		}, {
-		  "name":"GutHub",
-		  "href":"https://github.com/haandang",
-		  "src":"img/github.png"
-		}
-    ] },
   "summary" : {
     "contents" : [ {
       "content" : "I was born in Hue at Jan 1st, 1995."

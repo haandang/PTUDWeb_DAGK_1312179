@@ -1,5 +1,4 @@
-﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -7,14 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Han Dang | CV</title>
-
-    <!-- Bootstrap -->
+	
+	<!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/Style.css">
     <script src="js/angular.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular-sanitize.js"></script>
+    
 
-
+	
+	
   </head>
   <body class="background-main" ng-app="MyApp">
         <div ng-controller="ExampleController">
@@ -50,7 +51,6 @@
             </nav>
 
         <!-- body-code -->
-
         <div id="layout-main">
              <!-- background -->
             <div class="edit_background">img</div>
@@ -157,15 +157,31 @@
 					
                     <!-- Experience -->
 					<section id="experience" class="profile-section">
-					<img class="logo-title" src={{data.experience.logo}}>
-                        <h3 class="title">{{data.experience.name}}</h3>
-                         <div class="description" ng-dblclick=hidetextbox(edit.stateproject)>
-                                <p ng-bind="experiencecontent" ng-show="!edit.stateexperience.status"></p>
-                                 <textarea  ng-model="experiencecontent" ng-show="edit.stateexperience.status"> 
-                                 </textarea>
-                        </div> 
+                        <img class="logo-title" src={{data.experience.logo}}>
+						<span><h3 class="title">{{data.experience.name}}</h3></span>
+						
+						
+						<ul ng-repeat="experience in data.experience.contents">
+							<li class="position" ng-dblclick=hidetextbox(edit.stateexperience)>
+								<header class="logo">
+									<img class="lazy-loaded" alt={{experience.title_name}} src={{experience.logo}}>
+								</header>
+								<h4 class="item-title">{{experience.title_name}}</h4>
+								<input  class="changed" type="text" ng-show="edit.stateexperience.status" ng-model="experience.title_name"></input>
+								<span> <h5 class="item-subtitle">{{experience.position}}</h5>
+								<input  class="changed" type="text" ng-show="edit.stateexperience.status" ng-model="experience.position"></input>
+								</span>
+								<span> - <i>{{experience.period}}</i>
+								<input  class="changed" type="text" ng-show="edit.stateexperience.status" ng-model="experience.period"></input> </span>
+								<p class="item-subtitle">{{experience.description}}</p>
+								<input  class="changed" type="text" ng-show="edit.stateexperience.status" ng-model="experience.description"></input>
+								
+								
+							</li>
+						</ul>
                     </section>
 					
+			
 
                     
                      <!-- EDUCATION -->
@@ -181,8 +197,8 @@
 								<input  class="changed" type="text" ng-show="edit.stateeducation.status" ng-model="education.title_name"></input>
 								<h5 class="item-subtitle">{{education.subtitle_name}}</h5>
 								<input  class="changed" type="text" ng-show="edit.stateeducation.status" ng-model="education.subtitle_name"></input>
-								<i>{{education.date_range}}</i>
-								<input  class="changed" type="text" ng-show="edit.stateeducation.status" ng-model="education.date_range"></input>
+								<i>{{education.period}}</i>
+								<input  class="changed" type="text" ng-show="edit.stateeducation.status" ng-model="education.period"></input>
 								
 							</li>
 						</ul>
@@ -195,14 +211,14 @@
 						<ul ng-repeat="project in data.project.contents">
 							<li class="position" ng-dblclick=hidetextbox(edit.stateproject)>
 									<header class="logo">
-										<img class="lazy-loaded" alt={{project.title_name}} src={{project.logo_img}}><
+										<img class="lazy-loaded" alt={{project.title_name}} src={{project.logo_img}}>
 									</header>
 									<h4 class="item-title">{{project.title_name}}</h4>
 									<input  class="changed" type="text" ng-show="edit.stateproject.status" ng-model="project.title_name"></input>
 									<h5 class="item-subtitle">{{project.subtitle_name}}</h5>
 									<input  class="changed" type="text" ng-show="edit.stateproject.status" ng-model="project.subtitle_name"></input>
-									<i>Period: {{project.date_range}}</i>
-									<input  class="changed" type="text" ng-show="edit.stateproject.status" ng-model="project.date_range"></input>
+									<i>Period: {{project.period}}</i>
+									<input  class="changed" type="text" ng-show="edit.stateproject.status" ng-model="project.period"></input>
 									<p project.description}}</p>
 									<input  class="changed" type="text" ng-show="edit.stateproject.status" ng-model="project.description"></input>
 							</li>
@@ -219,10 +235,7 @@
               
             </div>
              <div id="footer">
-					<a href="http://www.facebook.com/kolee.chichi" target="_blank"> <img src="img/fb.png" > </a>
-					<a href="https://www.linkedin.com/profile/preview?locale=en_US&trk=prof-0-sb-preview-primary-button" target="_blank"><img src="img/linkedIn.png"> </a>
-					<a href="https://www.youtube.com/" target="_blank"><img src="img/youtube.png"> </a>
-					<a href="https://github.com/haandang" target="_blank"><img src="img/github.png"> </a>
+					<a ng-repeat="content in data.footer.contents" href={{content.href}} target="_blank"> <img src={{content.src}} > </a>
                     <ul>
                         <li ng-repeat="aboutme in data.information_me.contents">
                             {{aboutme.name}} : {{aboutme.content}}
@@ -238,7 +251,7 @@
         </div>
            
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>

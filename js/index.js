@@ -1,4 +1,18 @@
 ﻿
+    var data = new Firebase('https://dagk-quochan-1312179.firebaseio.com/web/data');
+    var avatar = data.child('data/avatar');
+	var education = data.child('data/education');
+	var experience = data.child('data/experience');
+	var footer = data.child('data/footer');
+	var header_banner = data.child('data/header_banner');
+	var history_me = data.child('data/history_me');
+	var introduce = data.child('data/introduce');
+	var infomation_me = data.child('data/infomation_me');
+	var project = data.child('data/project');
+	var skill = data.child('data/skill');
+	var summary = data.child('data/summary');
+	
+
 angular.module('MyApp', ['ngSanitize'])
         .controller('ExampleController', ['$scope','$http', function($scope, $http)
         {
